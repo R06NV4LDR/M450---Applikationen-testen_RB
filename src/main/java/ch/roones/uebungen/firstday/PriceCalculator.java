@@ -1,33 +1,27 @@
 package ch.roones.uebungen.firstday;
 
-public class PriceCalculator {
+/**
+ * PriceCalculator calculates Car prices based on various parameters.
+ */
+    public class PriceCalculator {
 
-    /**
-     * Calculates the final price of a car based on various parameters.
-     * @param baseprice The base price of the car.
-     * @param specialprice A special price reduction.
-     * @param extraprice The price of additional features. (3–4 → 10%, >=5 → 15%)
-     * @param extras The number of additional features.
-     * @param discount
-     * * @return
-     */
+        double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
+            double addon_discount;
+            double result;
 
-    public static double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
-        if (extras <= 0) extras = 0;
-        if (discount < 0) discount = 0;
-        if (discount > 100) discount = 100;
+            if (extras >= 5)
+                addon_discount = 10;      // <== hier steckt der Bug (10% statt 15%)
+            else if (extras >= 3)
+                addon_discount = 15;      // <== Reihenfolge ist auch verdreht
+            else
+                addon_discount = 0;
 
-        double addon_discount;
-        if (extras >= 5) addon_discount = 15.0;
-        else if (extras >= 3) addon_discount = 10;
-        else addon_discount = 0;
+            if (discount > addon_discount)
+                addon_discount = discount;
 
-        double basePart = baseprice * (1.0 - discount / 100.0);
-        double extraPart = extraprice * (1.0 - addon_discount / 100.0);
-        return basePart + specialprice + extraPart;
+            result = baseprice / 100.0 * (100 - discount) + specialprice
+                    + extraprice / 100.0 * (100 - addon_discount);
 
-
-
-
+            return result;
+        }
     }
-}
