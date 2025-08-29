@@ -96,3 +96,8 @@ Stellen Sie Ihre Tests ins Repository und zeigen Sie Ihre Lösung der Lehrperson
 ### Aufgabe 3 - Bonus
 
 Das Programmstück ist fehlerhaft ;) Finden Sie den Fehler im Code. Was müsste man korrigieren?
+
+Der Code oben liefert bei **3 oder 5 Extras** falsche Ergebnisse, weil:
+
+- Die `if`-Reihenfolge vertauscht ist --> `extras >= 5`setzt 10 statt 15.
+- Die Semantik "Rabatte dürfen nicht vermischt werden" ist falsch implementiert (`discount > addon_discount` ...)
