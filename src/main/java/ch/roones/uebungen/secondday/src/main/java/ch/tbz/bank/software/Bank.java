@@ -36,8 +36,9 @@ public class Bank {
 //            }
 //        }
 
-    // Todo: Möglichkeit mit Lambda-Funktion? Im Sinne von:
+    // Möglichkeit mit Lambda-Funktion? Im Sinne von:
     // Account a = accounts.get(a -> (a.getId() == Nr));
+
     public Account getAccount(int nr) {
         return accounts.stream()
                 .filter(a -> a.getId() == nr)   // Lambda-Bedingung
