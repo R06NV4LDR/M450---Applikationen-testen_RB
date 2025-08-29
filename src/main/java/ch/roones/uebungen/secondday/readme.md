@@ -12,6 +12,16 @@ Wir haben folgende Beschreibung einer Verkaufssoftware:
 - 20’000 < Kaufpreis < 25’000 CHF → 7 % Rabatt
 - Kaufpreis ≥ 25’000 CHF → 8.5 % Rabatt
 
+$$$
+R(x) =
+\begin{cases}
+0\% & x < 15'000 \\
+5\% & 15'000 \leq x \leq 20'000 \\
+7\% & 20'000 < x < 25'000 \\
+8.5\% & x \geq 25'000
+\end{cases}
+$$$
+
 Leiten Sie aus dieser Beschreibung Testfälle ab. Wir wollen beide Varianten von Testfällen untersuchen.
 
 ---
@@ -80,31 +90,48 @@ Projektquelle: [GitLab M450 – Unterlagen Teststrategie](https://gitlab.com/ch-
 
 ### 3.2 White-Box-Testfälle
 
+# White-Box-Testfälle
 
+## Klasse: Bank
 
-**Mögliche Klassen & Methoden:**
+| Test-ID | Methode              | Eingaben                             | Erwartetes Ergebnis                               | Anmerkungen                  |
+|---------|----------------------|--------------------------------------|--------------------------------------------------|------------------------------|
+| B1      | createAccount()      | Name, Startguthaben                  | Neues Konto wird erstellt                        | ID generieren, Startguthaben prüfen |
+| B2      | getNumberOfAccounts()| -                                    | Anzahl der vorhandenen Konten wird zurückgegeben | Boundary Test: 0 Konten |
+| B3      | printBalance()       | Konto-ID                             | Aktuelles Guthaben wird ausgegeben               | Auch ungültige ID testen |
+| B4      | printAccountDetails()| Konto-ID                             | Details des Kontos werden ausgegeben             | Vollständigkeit prüfen |
+| B5      | getAccount()         | Konto-ID                             | Account-Objekt wird zurückgegeben                | Null bei nicht vorhanden |
 
-- **Klasse `Bank`**
-    - `createAccount()`
-    - `getNumberOfAccounts()`
-    - `printBalance()`
-    - `printAccountDetails()`
-    - `getAccount()`
+---
 
-- **Klasse `Counter`**
-    - `chooseAccount()`
-    - `editAccount()`
-    - `transfer()`
-    - `convertCurrency()`
-    - `getExchangeRate()`
+## Klasse: Counter
 
-- **Klasse `ExchangeRateOkhttp`**
-    - `getExchangeRate()`
+| Test-ID | Methode          | Eingaben                              | Erwartetes Ergebnis                              | Anmerkungen |
+|---------|------------------|---------------------------------------|-------------------------------------------------|-------------|
+| C1      | chooseAccount()  | Konto-ID                              | Konto wird ausgewählt                           | Fehlerfall testen |
+| C2      | editAccount()    | Konto-ID, neue Werte                  | Konto wird angepasst                            | Validierung prüfen |
+| C3      | transfer()       | Quelle-ID, Ziel-ID, Betrag            | Betrag wird überwiesen, Salden aktualisiert     | Negative Beträge? |
+| C4      | convertCurrency()| Betrag, Zielwährung                   | Umgerechneter Betrag wird zurückgegeben         | Rundung beachten |
+| C5      | getExchangeRate()| Währung A, Währung B                  | Wechselkurs wird zurückgegeben                  | Fehlerbehandlung |
 
-- **Klasse `Account`**
-    - `deposit()`
-    - `withdraw()`
-    - `getBalance()`
+---
+
+## Klasse: ExchangeRateOkhttp
+
+| Test-ID | Methode          | Eingaben            | Erwartetes Ergebnis                  | Anmerkungen |
+|---------|------------------|---------------------|---------------------------------------|-------------|
+| E1      | getExchangeRate()| Währung A, Währung B| Aktueller Kurs von API wird geliefert | API nicht erreichbar testen |
+
+---
+
+## Klasse: Account
+
+| Test-ID | Methode     | Eingaben                   | Erwartetes Ergebnis                           | Anmerkungen |
+|---------|-------------|----------------------------|-----------------------------------------------|-------------|
+| A1      | deposit()   | Betrag                     | Guthaben wird erhöht                          | Null/negativ testen |
+| A2      | withdraw()  | Betrag                     | Guthaben wird verringert (falls ausreichend)  | Unterdeckung testen |
+| A3      | getBalance()| -                          | Aktuelles Guthaben wird zurückgegeben         | Nach Transaktionen prüfen |
+
 
 ---
 
