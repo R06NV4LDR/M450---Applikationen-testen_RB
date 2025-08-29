@@ -80,6 +80,8 @@ Projektquelle: [GitLab M450 – Unterlagen Teststrategie](https://gitlab.com/ch-
 
 ### 3.2 White-Box-Testfälle
 
+
+
 **Mögliche Klassen & Methoden:**
 
 - **Klasse `Bank`**
