@@ -1,18 +1,32 @@
-### Gradle ###
+#############################
+# Gradle (Java/Kotlin)
+#############################
 .gradle/
 build/
 
-# Wrapper JAR bleibt im Repo, damit das Projekt überall buildbar ist
+# Gradle Wrapper: unbedingt behalten, damit überall buildbar
 !gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
 
-### IntelliJ IDEA ###
+#############################
+# IntelliJ IDEA
+#############################
+# Standardmäßig .idea ausschließen …
 .idea/
+
+# … aber diese Dateien gezielt **einschließen**, damit die Projekt-JDK & Modulzuordnung erhalten bleiben:
+!.idea/misc.xml
+!.idea/modules.xml
+
+# Häufige IDEA-Dateien, die definitiv NICHT ins Repo sollen
 *.iml
-*.iws
 *.ipr
+*.iws
 out/
 
-### Eclipse ###
+#############################
+# Eclipse (falls mal geöffnet)
+#############################
 .apt_generated
 .classpath
 .factorypath
@@ -22,15 +36,22 @@ out/
 .sts4-cache
 bin/
 
-### NetBeans ###
+#############################
+# NetBeans
+#############################
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
+#############################
+# VS Code
+#############################
 .vscode/
 
-### Mac OS ###
+#############################
+# OS/Editor
+#############################
 .DS_Store
+Thumbs.db
