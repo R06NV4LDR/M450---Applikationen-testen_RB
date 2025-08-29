@@ -1,10 +1,10 @@
 package ch.roones.uebungen.firstday;
+import ch.roones.uebungen.firstday.PriceCalculator;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
 
         double car1 = PriceCalculator.calculatePrice(30000, 5000, 2000, 4, 5);
         double car2 = PriceCalculator.calculatePrice(45000, 3000, 4000, 2, 10);

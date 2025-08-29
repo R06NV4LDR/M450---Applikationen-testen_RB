@@ -5,14 +5,14 @@ package ch.roones.uebungen.firstday;
  */
     public class PriceCalculator {
 
-        double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
+        public static double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
             double addon_discount;
             double result;
 
             if (extras >= 5)
-                addon_discount = 10;      // <== hier steckt der Bug (10% statt 15%)
+                addon_discount = 15;      // <== hier steckt der Bug (10% statt 15%)
             else if (extras >= 3)
-                addon_discount = 15;      // <== Reihenfolge ist auch verdreht
+                addon_discount = 10;      // <== Reihenfolge ist auch verdreht
             else
                 addon_discount = 0;
 
