@@ -1,7 +1,6 @@
-package ch.roones.uebungen.secondday.src.main.java.ch.tbz.bank.software;
+package ch.roones.uebungen._02secondday.src.main.java.ch.tbz.bank.software;
 
 import java.io.IOException;
-import ch.roones.uebungen.secondday.src.main.java.ch.tbz.bank.software.Currency;
 
 /**
  * This console app simulates a bank counter that lets the user do basic banking business.

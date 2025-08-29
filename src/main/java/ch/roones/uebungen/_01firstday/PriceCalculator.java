@@ -1,4 +1,4 @@
-package ch.roones.uebungen.firstday;
+package ch.roones.uebungen._01firstday;
 
 /**
  * PriceCalculator calculates Car prices based on various parameters.

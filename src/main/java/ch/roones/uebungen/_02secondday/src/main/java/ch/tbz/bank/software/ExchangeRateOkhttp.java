@@ -1,4 +1,4 @@
-package ch.roones.uebungen.secondday.src.main.java.ch.tbz.bank.software;
+package ch.roones.uebungen._02secondday.src.main.java.ch.tbz.bank.software;
 
 import com.google.gson.Gson;
 

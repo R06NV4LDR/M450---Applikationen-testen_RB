@@ -1,4 +1,4 @@
-import ch.roones.uebungen.firstday.PriceCalculator;
+import ch.roones.uebungen._01firstday.PriceCalculator;
 
 public class PriceCalculatorTestDriver {
 

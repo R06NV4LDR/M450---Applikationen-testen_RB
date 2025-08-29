@@ -1,6 +1,5 @@
-package ch.roones.uebungen.secondday.src.main.java.ch.tbz.bank.software;
+package ch.roones.uebungen._02secondday.src.main.java.ch.tbz.bank.software;
 
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
