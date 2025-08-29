@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/M450 - Applikationen testen_RB.iml" filepath="$PROJECT_DIR$/.idea/M450 - Applikationen testen_RB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/M450-Applikationen_testen.iml" filepath="$PROJECT_DIR$/M450-Applikationen_testen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/M450-Applikationen_testen.main.iml" filepath="$PROJECT_DIR$/.idea/modules/M450-Applikationen_testen.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/M450-Applikationen_testen.test.iml" filepath="$PROJECT_DIR$/.idea/modules/M450-Applikationen_testen.test.iml" />
     </modules>
   </component>
 </project>
