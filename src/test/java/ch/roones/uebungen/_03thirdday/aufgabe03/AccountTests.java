@@ -88,10 +88,10 @@ public class AccountTests {
         @Test
         public void testMonthlyPrint () {
             Account account = new Account("A8") {};
-            account.deposit(20250905, 10000000L);  // 100.00 am 05.09.2025
-            account.withdraw(20250906, 5000L);     //   0.05 am 06.09.2025
-            account.deposit(20251007, 20000L);     // 200.00 am 07.10.2025
-            account.withdraw(20251008, 15000L);    // 150.00 am 08.10.2025
+            account.deposit(20045, 10000000L);  // 100.00 am 05.09.2025
+            account.withdraw(20046, 5000L);     //   0.05 am 06.09.2025
+            account.deposit(20047, 20000L);     // 200.00 am 07.10.2025
+            account.withdraw(20048, 15000L);    // 150.00 am 08.10.2025
             account.print(2025, 9);
             }
 
