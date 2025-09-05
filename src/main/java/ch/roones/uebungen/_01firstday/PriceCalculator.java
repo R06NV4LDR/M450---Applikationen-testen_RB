@@ -10,9 +10,9 @@ package ch.roones.uebungen._01firstday;
             double result;
 
             if (extras >= 5)
-                addon_discount = 15;      // <== hier steckt der Bug (10% statt 15%)
+                addon_discount = 10;      // <== hier steckt der Bug (10% statt 15%)
             else if (extras >= 3)
-                addon_discount = 10;      // <== Reihenfolge ist auch verdreht
+                addon_discount = 15;      // <== Reihenfolge ist auch verdreht
             else
                 addon_discount = 0;
 
