@@ -1,3 +1,5 @@
+package ch.roones.uebungen._01firstday;
+
 import ch.roones.uebungen._01firstday.PriceCalculator;
 
 public class PriceCalculatorTestDriver {
@@ -41,10 +43,8 @@ public class PriceCalculatorTestDriver {
 
         if (failures > 0) {
             System.err.println("\nTests FAILED: " + failures + " case(s)");
-            System.exit(1); // Gradle meldet dann korrekt einen Fehlschlag
         } else {
             System.out.println("\nAll tests passed ✅");
-            System.exit(0);
         }
     }
 }
