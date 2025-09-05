@@ -160,6 +160,7 @@ class ParamExample {
 ```
 
 **Anwendungsfall:**
+
 ---
 
 ## 7) Verschachtelte & wiederholte Tests
@@ -219,24 +220,39 @@ Collection<DynamicTest> dynamic() {
 ## 10) Erweiterungen (Extensions)
 
 ```java
+@ExtendWith(TimingExtension.class)
+class WithExtensionTest { /* … */ }
 
 ```
 
-**Anwendungsfall:**
+**Anwendungsfall:** Cross-Cutting Concerns wie Timing, Logging, Ressourcen-Handling, Mockito-Integration etc.
+
+Häufig genutzt: MockitoExtension (`@ExtendWith(MockitoExtension.class)`).
 
 ---
 
 ## 11) Testreihenfolge & -instanz
 
 ```java
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class OrderedTest {
+
+  @Test @Order(1) void create() { /* … */ }
+
+  @Test @Order(2) void read() { /* … */ }
+}
 
 ```
 
-**Anwendungsfall:**
+**Anwendungsfall:** In Ausnahmefällen, wenn Reihenfolge fachlich sinnvoll ist (z. B. API-Flow-Demo).
+
+    Tipp: **Tests normalerweise unabhängig halten.**
 
 ---
 
 ## 12) Gradle-Setup (JUnit 5 aktivieren)
+
+In `build.gradle` (Groovy):
 
 ```groovy
 plugins {
@@ -257,20 +273,36 @@ test {
 }
 ```
 
+**Anwendungsfall:** Sorgt dafür, dass die JUnit-5-Engine verwendet wird und parametrisierte Tests etc. erkannt werden.
+
+---
+
 ## 13) Häufige Muster
 
 - **AAA (Arrange-Act-Assert):**
 
 ```java
+// Arrange
+var calc = new Calculator();
+// Act
+var result = calc.add(2, 3);
 
+// Assert
+assertEquals(5,result);
 ```
+
+- **Given-When-Then** (verbal, gleiche Idee wie AAA).
+- **Testdaten-Builder** für saubere Objekt-Erstellung in Tests.
+
+---
 
 ## 14) Tipps aus der Praxis
 
-- Eine Assertion pro Verhalten; mehrere Assertions via assertAll logisch bündeln.
+- Eine Assertion pro Verhalten; mehrere Assertions via `assertAll` logisch bündeln.
 - Teste sichtbare Effekte (Output, State, Kollaborationen), nicht Implementierungsdetails.
-- Nutze @Tag (z. B. slow, integration), um lange Tests separat laufen zu lassen.
+- Nutze `@Tag` (z. B. `slow`, `integration`), um lange Tests separat laufen zu lassen.
 - Vermeide geteilten Zustand zwischen Tests; nutze Fixtures sauber.
 
 ## Referenz
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+
+- [JUnit 5 User Guide (offiziell)](https://junit.org/junit5/docs/current/user-guide/)
