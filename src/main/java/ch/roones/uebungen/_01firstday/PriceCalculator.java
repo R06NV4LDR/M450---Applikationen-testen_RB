@@ -3,25 +3,29 @@ package ch.roones.uebungen._01firstday;
 /**
  * PriceCalculator calculates Car prices based on various parameters.
  */
-    public class PriceCalculator {
+public class PriceCalculator {
 
-        public static double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
-            double addon_discount;
-            double result;
+    public static double calculatePrice(double baseprice, double specialprice, double extraprice, int extras, double discount) {
+        double addon_discount;
+        double result;
 
-            if (extras >= 5)
-                addon_discount = 10;      // <== hier steckt der Bug (10% statt 15%)
-            else if (extras >= 3)
-                addon_discount = 15;      // <== Reihenfolge ist auch verdreht
-            else
-                addon_discount = 0;
+        if (extras < 0)
+            extras = 0;
 
-            if (discount > addon_discount)
-                addon_discount = discount;
+        if (extras >= 5)
+            addon_discount = 15;      // <== hier steckt der Bug (10% statt 15%)
+        else if (extras >= 3)
+            addon_discount = 10;      // <== Reihenfolge ist auch verdreht
+        else
+            addon_discount = 0;
 
-            result = baseprice / 100.0 * (100 - discount) + specialprice
-                    + extraprice / 100.0 * (100 - addon_discount);
+        if (discount < 0)
+            discount = 0;
+        if (discount > 100)
+            discount = 100;
 
-            return result;
-        }
+        double basePart = baseprice * (1.0 - discount / 100.0);
+        double extraPart = extraprice * (1.0 - addon_discount / 100.0);
+        return basePart + specialprice + extraPart;
     }
+}
