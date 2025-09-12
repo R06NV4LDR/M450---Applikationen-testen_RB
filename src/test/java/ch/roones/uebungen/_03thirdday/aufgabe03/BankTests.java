@@ -96,7 +96,19 @@ public class BankTests {
      */
     @Test
     public void testBalance() {
-        fail("toDo");
+        Bank bank = new Bank();
+        String id1 = bank.createSavingsAccount();
+        String id2 = bank.createPromoYouthSavingsAccount();
+        String id3 = bank.createSalaryAccount(-10000L);
+        bank.deposit(id1, 1, 10000L);
+        bank.deposit(id2, 1, 20000L);
+        bank.deposit(id3, 1, 30000L);
+        // Withdraw from salary account to go negative
+        bank.withdraw(id3, 2, 35000L);
+        // Balances: id1=10000, id2=20200 (1% bonus), id3=-5000
+        long expectedTotal = 10000L + 20200L - 5000L;
+        long actualTotal = bank.getBalance(id1) + bank.getBalance(id2) + bank.getBalance(id3);
+        assertEquals(expectedTotal, actualTotal, "Sum of balances should match");
     }
 
     /**
@@ -104,7 +116,23 @@ public class BankTests {
      */
     @Test
     public void testTop5() {
-        fail("toDo");
+        Bank bank = new Bank();
+        String[] ids = new String[6];
+        for (int i = 0; i < 6; i++) {
+            ids[i] = bank.createSavingsAccount();
+            bank.deposit(ids[i], 1, (i + 1) * 1000L);
+        }
+        // Capture output
+        java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+        System.setOut(new java.io.PrintStream(out));
+        bank.printTop5();
+        System.setOut(System.out);
+        String output = out.toString();
+        // Top 5 should be ids[5] to ids[1] in descending order
+        for (int i = 5; i >= 1; i--) {
+            assertTrue(output.contains(ids[i]), "Top5 should contain account " + ids[i]);
+        }
+        assertFalse(output.contains(ids[0]), "Top5 should not contain account " + ids[0]);
     }
 
     /**
@@ -112,7 +140,23 @@ public class BankTests {
      */
     @Test
     public void testBottom5() {
-        fail("toDo");
+        Bank bank = new Bank();
+        String[] ids = new String[6];
+        for (int i = 0; i < 6; i++) {
+            ids[i] = bank.createSavingsAccount();
+            bank.deposit(ids[i], 1, (i + 1) * 1000L);
+        }
+        // Capture output
+        java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+        System.setOut(new java.io.PrintStream(out));
+        bank.printBottom5();
+        System.setOut(System.out);
+        String output = out.toString();
+        // Bottom 5 should be ids[0] to ids[4] in ascending order
+        for (int i = 0; i < 5; i++) {
+            assertTrue(output.contains(ids[i]), "Bottom5 should contain account " + ids[i]);
+        }
+        assertFalse(output.contains(ids[5]), "Bottom5 should not contain account " + ids[5]);
     }
 
 }
