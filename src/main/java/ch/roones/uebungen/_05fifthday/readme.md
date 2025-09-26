@@ -17,6 +17,8 @@ Zeigen Sie ihre Lösung
 
 Für das Testen der REST-Schnittstelle wurde zuerst Apache JMeter in Betracht gezogen. Da JMeter jedoch hauptsächlich für Lasttests verwendet wird und die Einrichtung für einfache API-Tests etwas umständlich sein kann, wurde stattdessen Postman gewählt. Postman bietet eine benutzerfreundliche Oberfläche und umfangreiche Funktionen für das Testen von APIs. 
 
+![Postman Tests](./ M450_TBZ_Students_PostmanTests.png)
+
 ## Übung 2
 
 Wählen Sie ein Frontend Test tool aus und versuchen Sie die Angular Applikation (das GUI) automatisiert zu testen im

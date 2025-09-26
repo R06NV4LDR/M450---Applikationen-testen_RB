@@ -21,23 +21,25 @@
   * [Source](#source)
 <!-- TOC -->
 
-# Schnittstellen
+## Schnittstellen
 
 ---
+
 <img src="../../../../../../../img/m450_4_dependencies.png"  width="70%" alt="Testarten">
 
-## Glossar:
+## Glossar
 
 | Abkürzung | Erklärung         |
 |-----------|-------------------|
 | SUT       | System under test |
 
-## Lernziel:
+## Lernziel
 
 * Ich kenne Test Doubles
 * Ich weiss, wo Test Doubles zum Einsatz kommen
 * Ich kenne ein Test Framework, welches Test Doubles verwendet
 ---
+
 ## Einführung
 
 Früher oder später trifft man bei Unit-Tests (hier würde man dann eher den Begriff Component-Tests verwenden) auf
@@ -115,6 +117,7 @@ Sie verwenden Spione, wenn Sie sich nicht sicher sind, was Ihr SUT von Ihrem Mit
 alles auf und stellen fest, ob der Spion die gewünschten Daten abgerufen hat.
 
 ---
+
 ### Dummy
 
 Dummy-Objekte sind sehr simpel. Ein Dummy ist z.B. nur ein Objekt, das Sie übergeben, um einen Konstruktor zu initialisieren.
