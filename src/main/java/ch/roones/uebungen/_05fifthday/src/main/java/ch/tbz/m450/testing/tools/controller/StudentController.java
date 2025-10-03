@@ -1,7 +1,7 @@
-package ch.roones.uebungen._05fifthday.java.controller;
+package ch.tbz.m450.testing.tools.controller;
 
-import ch.roones.uebungen._05fifthday.java.repository.StudentRepository;
-import ch.roones.uebungen._05fifthday.java.repository.entities.Student;
+import ch.tbz.m450.testing.tools.repository.StudentRepository;
+import ch.tbz.m450.testing.tools.repository.entities.Student;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

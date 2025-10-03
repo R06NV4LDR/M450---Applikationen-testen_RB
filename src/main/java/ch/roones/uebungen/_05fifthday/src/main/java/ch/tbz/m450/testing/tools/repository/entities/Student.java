@@ -1,4 +1,4 @@
-package ch.roones.uebungen._05fifthday.java.repository.entities;
+package ch.tbz.m450.testing.tools.repository.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

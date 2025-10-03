@@ -1,6 +1,6 @@
-package ch.roones.uebungen._05fifthday.java.repository;
+package ch.tbz.m450.testing.tools.repository;
 
-import ch.roones.uebungen._05fifthday.java.repository.entities.Student;
+import ch.tbz.m450.testing.tools.repository.entities.Student;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StudentRepository extends CrudRepository<Student, Long> {
