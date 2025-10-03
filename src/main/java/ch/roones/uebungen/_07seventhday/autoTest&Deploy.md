@@ -57,7 +57,7 @@ Mittels *set up CI/CD* wird ein yaml File erstellt. Dieses File beschreibt die e
 Das File wird im *Hauptverzeichnis des Repositories* abgelegt.
 Syntax und Struktur des yml-Files, hier direkt aus dem generierten Template:
 
-```
+```yml
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
@@ -108,7 +108,7 @@ Falls Sie die Vorlage generiert haben, müssen Sie diese auf Ihr Projekt anpasse
 mit Image definieren Sie, welches Docker Image der Runner verwenden soll (z.Bsp. Maven oder Gradle). Dieses Image wird im Build-Job verwendet.
 Beispiel:  
 
-```
+```yml
 image: maven:latest
 ```
 
@@ -116,7 +116,8 @@ image: maven:latest
 
 mit Variables definieren Sie Variablen, die Sie in der Pipeline verwenden. Typischerweise sind das Variablen, um z.Bsp. die Art der Ausführung des Build-Tools zu beschreiben.
 Beispiel:
-```
+
+```yml
 variables:
   MAVEN_CLI_OPTS: " --batch-mode"
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
@@ -124,26 +125,26 @@ variables:
 
 Hier definieren wir, dass das CLI von Maven im batch-mode ausgeführt wird. Wir definieren auch, wo das Repository mit dem Code zu finden ist.
 
-Achtung: GitLab hat einige vordefinierte Variablen, die Sie gleich verwenden können. Eine Auflistung dazu finden Sie hier: https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
-
+Achtung: GitLab hat einige vordefinierte Variablen, die Sie gleich verwenden können. Eine Auflistung dazu finden Sie hier: <https://docs.gitlab.com/ee/ci/variables/predefined_variables.html>
 
 **Script**<br/>
 
 Im Script Element führen Sie die eigentlichen Befehle aus, damit der Job ausgeführt wird. Im obigen Beispiel werden nur Prompts ausgegeben (echo).
 Beispiel:
-```
+
+```yml
 script:
     - mvn $MAVEN_CLI_OPTS test
 ```
 
 Hier rufen wir das Build-Programm Maven auf, im batch-mode. Wir rufen den Befehl «test» auf, um die Unit Tests auszuführen.
 
-
 **Artifacts**<br/>
 
 mit Artifacts definieren Sie, welche Resultate oder «Produkte» Sie wollen und wo diese abgelegt werden. Typischerweise wären das XML-Files mit den Unit-Testresultate.
 Beispiel:
-```
+
+```yml
 java:
   stage: test
   script:
@@ -162,9 +163,10 @@ Hier beschreiben wir den Job *java* (im Stage «test»). Maven wird mit dem Befe
 ### Reports mit Pages ausgeben
 
 GitLab bietet sog. **Pages** an, um Artefakte in einem bestimmtem Format auszugeben.
-Siehe dazu folgende Informationen: https://docs.gitlab.com/ee/user/project/pages/
+Siehe dazu folgende Informationen: <https://docs.gitlab.com/ee/user/project/pages/>
 Beispiel:
-```
+
+```yml
 pages:
   stage: deploy
   script:
@@ -174,31 +176,30 @@ pages:
     paths:
     - public
 ```
-Hier beschreiben wir den Job *pages* (im Stage "deploy"). Mit dem Maven Befehl "site" wird der Report generiert.
 
+Hier beschreiben wir den Job *pages* (im Stage "deploy"). Mit dem Maven Befehl "site" wird der Report generiert.
 
 ---
 
-## Auftrag:
+## Auftrag
 
 Erstellen Sie ein entsprechendes *Yaml-File* mit den nötigen Script Befehlen für Ihr Projekt.
 
-
 ---
 
-## Quellen:
+## Quellen
 
 Erklärt das Konzept von CI/CD:<br/>
-https://www.youtube.com/watch?v=OPwU3UWCxhw
+<https://www.youtube.com/watch?v=OPwU3UWCxhw>
 
 Detaillierte Anleitung für CI/CD auf GitLab mit Maven als Build:<br/>
-https://www.youtube.com/watch?v=9llCMADxvzI
+<https://www.youtube.com/watch?v=9llCMADxvzI>
 
 Pipeline Syntax:<br/>
-https://docs.gitlab.com/ee/ci/yaml/
+<https://docs.gitlab.com/ee/ci/yaml/>
 
 Predefined Variables in GitLab:<br/>
-https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
+<https://docs.gitlab.com/ee/ci/variables/predefined_variables.html>
 
 Anleitung zu Pipelines auf GitLab:<br/>
-https://docs.gitlab.com/ee/topics/build_your_application.html
+<https://docs.gitlab.com/ee/topics/build_your_application.html>

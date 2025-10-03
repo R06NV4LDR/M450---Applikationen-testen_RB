@@ -1,15 +1,15 @@
- # Testumgebungen
+# Testumgebungen
 <!-- TOC -->
 
 * [Testumgebungen](#testumgebungen)
-    * [Glossar:](#glossar)
-    * [Lernziel:](#lernziel)
-    * [Einführung](#einführung)
-        * [Typen von Environments](#typen-von-environments)
-            * [Development Environment](#development-environment)
-            * [Testing Environment](#testing-environment)
-            * [Staging Environment](#staging-environment)
-            * [Production Environment](#production-environment)
+  * [Glossar:](#glossar)
+  * [Lernziel:](#lernziel)
+  * [Einführung](#einführung)
+    * [Typen von Environments](#typen-von-environments)
+      * [Development Environment](#development-environment)
+      * [Testing Environment](#testing-environment)
+      * [Staging Environment](#staging-environment)
+      * [Production Environment](#production-environment)
     * [Source](#source)
 * [Checkpoint](#checkpoint)
 
@@ -18,21 +18,22 @@
 # Deployment Environment
 
 ---
+
 <img src="./x_gitres/production-environments.png"  width="50%" alt="Testarten">
 
-## Glossar:
+## Glossar
 
 | Abkürzung | Erklärung                        |
 |-----------|----------------------------------|
 | SDLC      | System development life cycle    |
 | SDE       | Software development environment |
 
-## Lernziel:
+## Lernziel
 
 * Ich kenne die verschiedenen Typen an deployment environments
 * Ich kenne die Anwendungszwecke der einzelnen Typen
 
---- 
+---
 
 ## Einführung
 
@@ -141,7 +142,8 @@ einen neuen „Grade“, also in eine neue (Produkt-)Klasse. Die Software wird d
 erweitert, erhält teilweise ganz neue Funktionen und gelegentlich sogar eine völlig neue Struktur.
 
 ## Setup Deployment Environments
-Manchmal bietet es sich an, das Setup der Umgebungen zu automatisieren. Wird mit Containern gearbeitet, bietet sich der Einsatz von Docker Compose oder Kubernetes an. Wenn mit VMs gearbeitet wird, dann sind Vagrant und Terraform zwei mögliche Lösungen, VM's automatisiert aufzusetzen. Für Produktivumgebungen wird eher Terraform verwendet, für das Setup der lokalen Entwicklungsumgebung wird eher Vagrant eingesetzt. Beides sind Produkte von der HashiCorp die kostenlos zur Verfügung stehen. Ein Vergleich der beiden Lösungen und was wann eingesetzt werden sollte, ist unter https://developer.hashicorp.com/vagrant/intro/vs/terraform zu finden.
+
+Manchmal bietet es sich an, das Setup der Umgebungen zu automatisieren. Wird mit Containern gearbeitet, bietet sich der Einsatz von Docker Compose oder Kubernetes an. Wenn mit VMs gearbeitet wird, dann sind Vagrant und Terraform zwei mögliche Lösungen, VM's automatisiert aufzusetzen. Für Produktivumgebungen wird eher Terraform verwendet, für das Setup der lokalen Entwicklungsumgebung wird eher Vagrant eingesetzt. Beides sind Produkte von der HashiCorp die kostenlos zur Verfügung stehen. Ein Vergleich der beiden Lösungen und was wann eingesetzt werden sollte, ist unter <https://developer.hashicorp.com/vagrant/intro/vs/terraform> zu finden.
 
 In der [Übungsaufgabe](./UEBUNGEN.md) haben Sie die Möglichkeit, eine der vorgestellten Softwarelösungen auszuprobieren.
 
@@ -149,8 +151,8 @@ In der [Übungsaufgabe](./UEBUNGEN.md) haben Sie die Möglichkeit, eine der vorg
 
 ## Source
 
-* https://en.wikipedia.org/wiki/Deployment_environment
-* https://www.unitrends.com/blog/development-test-environments
+* <https://en.wikipedia.org/wiki/Deployment_environment>
+* <https://www.unitrends.com/blog/development-test-environments>
 
 # Checkpoint
 
@@ -158,4 +160,3 @@ In der [Übungsaufgabe](./UEBUNGEN.md) haben Sie die Möglichkeit, eine der vorg
 * Ich kenne die Reihenfolge der Environments, welche eine Software durchläuft, bevor sie released wird
 * Ich kenne die Aufgaben der einzelnen Environments
 * Ich kenne den Unterschied zwischen einem Patch, Update und Upgrade
-
