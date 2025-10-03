@@ -15,9 +15,9 @@ Zeigen Sie ihre Lösung
 
 ### Lösung
 
-Für das Testen der REST-Schnittstelle wurde zuerst Apache JMeter in Betracht gezogen. Da JMeter jedoch hauptsächlich für Lasttests verwendet wird und die Einrichtung für einfache API-Tests etwas umständlich sein kann, wurde stattdessen Postman gewählt. Postman bietet eine benutzerfreundliche Oberfläche und umfangreiche Funktionen für das Testen von APIs. 
+Für das Testen der REST-Schnittstelle wurde zuerst Apache JMeter in Betracht gezogen. Da JMeter jedoch hauptsächlich für Lasttests verwendet wird und die Einrichtung für einfache API-Tests etwas umständlich sein kann, wurde stattdessen Postman gewählt. Postman bietet eine benutzerfreundliche Oberfläche und umfangreiche Funktionen für das Testen von APIs.
 
-![Postman Tests](./ M450_TBZ_Students_PostmanTests.png)
+![Postman Tests](../../../../../../../img/M450_TBZ_Students_PostmanTests.png)
 
 ## Übung 2
 
@@ -28,7 +28,7 @@ Zeigen Sie ihre Lösung
 
 ## Übung 3
 
-Versuchen Sie mit [Postman](https://blog.postman.com/postman-api-performance-testing/), [JMeter]() oder Alternativen Tools das Backend mit grösserem Traffic zu belasten.
+Versuchen Sie mit [Postman](https://blog.postman.com/postman-api-performance-testing/), [JMeter](https://jmeter.apache.org/) oder Alternativen Tools das Backend mit grösserem Traffic zu belasten.
 Erkunden Sie das Tool bezüglich den Funktionalitäten
 Dokumentieren Sie eine Zusammenfassung in einem Markdown-Dokument
 
@@ -42,4 +42,3 @@ Mögliche Feature Ideen:
 - Input Validierungen (Backend oder Frontend)
 - Error Handling
 - Zusätzliche Felder (mit zusätzlichen Datentypen)
-
