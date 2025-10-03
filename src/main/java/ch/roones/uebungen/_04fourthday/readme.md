@@ -2,7 +2,6 @@
 
 ![TBZ Logo](../../x_gitres/tbz_logo.png)
 
-
 <!-- TOC -->
 * [Schnittstellen](#schnittstellen)
   * [Glossar:](#glossar)
@@ -25,7 +24,7 @@
 
 ---
 
-<img src="../../../../../../../img/m450_4_dependencies.png"  width="70%" alt="Testarten">
+![Testarten](../../../../../../../img/m450_4_dependencies.png)
 
 ## Glossar
 
@@ -38,6 +37,7 @@
 * Ich kenne Test Doubles
 * Ich weiss, wo Test Doubles zum Einsatz kommen
 * Ich kenne ein Test Framework, welches Test Doubles verwendet
+
 ---
 
 ## Einführung
@@ -47,8 +47,7 @@ folgendes Problem;
 Man würde gerne eine Methode Unit-Testen, merkt dann aber, dass diese Methode viele Abhängigkeiten zu anderen Klassen /
 Methoden besitzt, welche einem eigentlich gar nicht interessieren in diesem Kontext. Sprich man möchte diesen Teil, der
 einem nicht interessiert, irgendwie aushebeln.
-
-<img src="../../../../../../../img/m450_4_component-testing.png"  width="50%" alt="Testarten">
+![Testarten](../../../../../../../img/m450_4_component-testing.png)
 
 Hier kommen [Test Doubles](https://en.wikipedia.org/wiki/Test_double) zum Zuge, welche man mit einem Stunt Double
 vergleichen kann. Fakes, Stubs, Dummys, Spys und Mocks gehören alle zur Kategorie der Testdoubles. Ein Testdouble ist
@@ -69,20 +68,19 @@ Mocks vs Stubs = Behavioral testing vs State testing
 Der Zweck von beidem ist es, das Testen aller Abhängigkeiten einer Klasse oder Funktion zu eliminieren, so dass Ihre
 Tests konzentrierter und einfacher sind in dem, was sie zu beweisen versuchen.
 
-<img src="../../../../../../../img/m450_4_stub-vs-mocks.png"  width="50%" alt="Mock vs Stub">
+![Mock vs Stub](../../../../../../../img/m450_4_stub-vs-mocks.png)
 
 * Ein **Mock** wartet darauf, von der zu testenden Klasse (A) aufgerufen zu werden.
-    * Vielleicht hat sie mehrere Methoden, die sie erwartet und die A aufrufen sollte.
+  * Vielleicht hat sie mehrere Methoden, die sie erwartet und die A aufrufen sollte.
 * Sie stellt sicher, dass sie auf genau die richtige Weise kontaktiert wurde.
-    * Wenn A mit B so interagiert, wie es sein sollte, ist der Test erfolgreich.
+  * Wenn A mit B so interagiert, wie es sein sollte, ist der Test erfolgreich.
 
-<img src="../../../../../../../img/m450_4_mock.png"  width="400" alt="Mock">
+![Mock](../../../../../../../img/m450_4_mock.png)
 
 * Ein **Stub** gibt Daten aus, die an die zu testende Klasse/das zu testende Objekt gehen.
 * Der Unit-Test überprüft direkt die zu testende Klasse, um sicherzustellen, dass er das richtige Ergebnis liefert, wenn
   er mit diesen Daten gefüttert wird
-
-<img src="../../../../../../../img/m450_4_stub.png"  width="400" alt="Stub">
+![Stub](../../../../../../../img/m450_4_stub.png)
 
 ### Lifecycle
 
@@ -96,7 +94,8 @@ Tests konzentrierter und einfacher sind in dem, was sie zu beweisen versuchen.
 |                                                                                    | 6. Teardown - Aufräumen der Ressourcen.                                                                               |
 
 ## Mock, Spy Stub, Fake, Dummy
-<img src="../../../../../../../img/m450_4_test-doubles-mock-stub.svg"  width="50%" alt="Mock vs Stub">
+
+![Mock vs Stub](../../../../../../../img/m450_4_test-doubles-mock-stub.svg)
 
 ---
 
@@ -149,7 +148,7 @@ Datenbank zu starten und zeitaufwändige Anfragen durchzuführen.
 
 ## Mockito - alles in einem
 
-<img src="../../../../../../../img/m450_4_mockito.png"  width="50%" alt="Testarten">
+![Testarten](../../../../../../../img/m450_4_mockito.png)
 
 Nicht nur Mockito, sondern die meisten Mocking-Frameworks haben dieses Enten-Syndrom, bei dem sie mehrere Dinge tun
 können: eine Ente kann schwimmen, fliegen und laufen. Diese Frameworks arbeiten mit Dummies, Mocks, Spys und Stubs.
@@ -165,13 +164,13 @@ und HTTP Responses zu stubben. Eine Variante dafür wäre z.B. [WireMock](https:
 
 ## Source
 
-* https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub
-* https://stackoverflow.com/questions/346372/whats-the-difference-between-faking-mocking-and-stubbing
-* https://methodpoet.com/stub-vs-mock/
-* https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da
-* https://www.javacodegeeks.com/2019/04/introduction-to-test-doubles.html
+* <https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub>
+* <https://stackoverflow.com/questions/346372/whats-the-difference-between-faking-mocking-and-stubbing>
+* <https://methodpoet.com/stub-vs-mock/>
+* <https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da>
+* <https://www.javacodegeeks.com/2019/04/introduction-to-test-doubles.html>
 
-# Checkpoint
+## Checkpoint
 
 * Ich kann die zwei Hauptkategorien Mocks und Stubs unterscheiden
 * Ich kenne die Unterschiede des Lifecycles
