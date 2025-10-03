@@ -7,7 +7,7 @@
   - [Begriffe](#begriffe)
   - [Werkzeuge](#werkzeuge)
   - [Aufbau und Erstellen der Pipeline](#aufbau-und-erstellen-der-pipeline)
-    - [Schritt 1](#schritt-1)
+    - [Schritt 1](#schritt-1-voraussetzungen)
     - [Schritt 2](#schritt-2)
     - [Schritt 3](#schritt-3)
   - [Anpassen der Pipeline auf Ihr Projekt](#anpassen-der-pipeline-auf-ihr-projekt)
@@ -26,16 +26,16 @@
 
 ## Begriffe
 
-**Pipeline:**<br/>
+**Pipeline:**
 Die Top-Level Komponente, wo wir «Stages» und «Jobs» deklarieren können.
 
-**Stage:**<br/>
+**Stage:**
 Beschreibt die einzelne Phase in der Pipeline. Ein Stage besteht aus einem oder mehreren Jobs.
 
-**Job:**<br/>
+**Job:**
 Ist ein einzelner Prozess innerhalb eines Stage. Ein Job könnte z.Bsp. das Kompilieren von Code sein.
 
-**Runner:**<br/>
+**Runner:**
 Runner ist eine open source Applikation, welche die einzelnen Jobs ausführt. Die App kann lokal installiert werden oder in einer Cloud-Umgebung (Shared Runners werden auf GitLab gehostet).
 
 ## Werkzeuge
@@ -103,7 +103,7 @@ Am besten verwenden Sie den Pipeline Editor auf GitLab, um Ihre Pipeline anzupas
 
 Falls Sie die Vorlage generiert haben, müssen Sie diese auf Ihr Projekt anpassen. Dazu noch eine kurze Erläuterung der notwendigen Keywords:
 
-**Image**<br/>
+### Image
 
 mit Image definieren Sie, welches Docker Image der Runner verwenden soll (z.Bsp. Maven oder Gradle). Dieses Image wird im Build-Job verwendet.
 Beispiel:  
@@ -112,7 +112,7 @@ Beispiel:
 image: maven:latest
 ```
 
-**Variables**<br/>
+### Variables
 
 mit Variables definieren Sie Variablen, die Sie in der Pipeline verwenden. Typischerweise sind das Variablen, um z.Bsp. die Art der Ausführung des Build-Tools zu beschreiben.
 Beispiel:
@@ -127,7 +127,7 @@ Hier definieren wir, dass das CLI von Maven im batch-mode ausgeführt wird. Wir 
 
 Achtung: GitLab hat einige vordefinierte Variablen, die Sie gleich verwenden können. Eine Auflistung dazu finden Sie hier: <https://docs.gitlab.com/ee/ci/variables/predefined_variables.html>
 
-**Script**<br/>
+### Script
 
 Im Script Element führen Sie die eigentlichen Befehle aus, damit der Job ausgeführt wird. Im obigen Beispiel werden nur Prompts ausgegeben (echo).
 Beispiel:
@@ -139,7 +139,7 @@ script:
 
 Hier rufen wir das Build-Programm Maven auf, im batch-mode. Wir rufen den Befehl «test» auf, um die Unit Tests auszuführen.
 
-**Artifacts**<br/>
+### Artifacts
 
 mit Artifacts definieren Sie, welche Resultate oder «Produkte» Sie wollen und wo diese abgelegt werden. Typischerweise wären das XML-Files mit den Unit-Testresultate.
 Beispiel:
@@ -189,17 +189,17 @@ Erstellen Sie ein entsprechendes *Yaml-File* mit den nötigen Script Befehlen f�
 
 ## Quellen
 
-Erklärt das Konzept von CI/CD:<br/>
+Erklärt das Konzept von CI/CD:
 <https://www.youtube.com/watch?v=OPwU3UWCxhw>
 
-Detaillierte Anleitung für CI/CD auf GitLab mit Maven als Build:<br/>
+Detaillierte Anleitung für CI/CD auf GitLab mit Maven als Build:
 <https://www.youtube.com/watch?v=9llCMADxvzI>
 
-Pipeline Syntax:<br/>
+Pipeline Syntax:
 <https://docs.gitlab.com/ee/ci/yaml/>
 
-Predefined Variables in GitLab:<br/>
+Predefined Variables in GitLab:
 <https://docs.gitlab.com/ee/ci/variables/predefined_variables.html>
 
-Anleitung zu Pipelines auf GitLab:<br/>
+Anleitung zu Pipelines auf GitLab:
 <https://docs.gitlab.com/ee/topics/build_your_application.html>
