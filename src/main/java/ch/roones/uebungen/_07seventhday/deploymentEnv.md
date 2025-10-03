@@ -15,11 +15,11 @@
 
 <!-- TOC -->
 
-# Deployment Environment
+## Deployment Environment
 
 ---
 
-<img src="./x_gitres/production-environments.png"  width="50%" alt="Testarten">
+![Testarten]()
 
 ## Glossar
 
@@ -40,7 +40,7 @@
 Software testing is ein kritischer Teil
 ihres [System Development Life Cycle](https://en.wikipedia.org/wiki/Systems_development_life_cycle). Ob es sich hier
 um neue Software / Applikationen, Patches oder Updates handelt, beim Testing ist das Ziel immer, dass es versichert,
-dass der Code das tut, was er soll, bevor er produktiv released wird.<br/>
+dass der Code das tut, was er soll, bevor er produktiv released wird.
 
 Bei der Softwarebereitstellung ist ein Environment ein Computersystem oder eine Reihe von Systemen, in denen
 ein Computerprogramm oder eine Softwarekomponente bereitgestellt und ausgeführt wird. In einfachen Fällen, z. B. bei der
@@ -154,7 +154,7 @@ In der [Übungsaufgabe](./UEBUNGEN.md) haben Sie die Möglichkeit, eine der vorg
 * <https://en.wikipedia.org/wiki/Deployment_environment>
 * <https://www.unitrends.com/blog/development-test-environments>
 
-# Checkpoint
+## Checkpoint
 
 * Ich kenne die verschiedenen Deployment Environments
 * Ich kenne die Reihenfolge der Environments, welche eine Software durchläuft, bevor sie released wird

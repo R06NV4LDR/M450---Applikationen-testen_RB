@@ -2,13 +2,18 @@
 
 Während der Test Driven Development Phase erstellen Sie eine **Pipeline**, um folgende Stages zu automatisieren:
 
-**Build**<br/>
+## Stages
+
+### Build
+
 Hier verwenden Sie ein entsprechendes Tool, um Ihren Code zu builden (Gradle oder Maven).
 
-**Test**<br/>
+### Test
+
 Hier werden die Unit-Tests automatisiert ausgeführt und als *Artifacts* abgelegt.
 
-**Deploy**<br/>
+### Deploy
+
 Hier werden die Testresultate publiziert. Z.Bsp. mit GitLab Pages.
 
 Erstellen Sie ein entsprechendes **Yaml-File** mit den Script Befehlen für Ihr Projekt. Eine Anleitung inkl. Tutorials finden Sie unter Lerninhalt. (<https://gitlab.com/ch-tbz-it/Stud/m450/m450/-/blob/main/Unterlagen/ci-cd-pipeline/README.md>).
